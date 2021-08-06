@@ -1,0 +1,29 @@
+{
+  "name": "node-red-beginner-handson-4",
+  "version": "1.0.0",
+  "description": "![image](https://i.gyazo.com/f5e0ecb5527962bbbd33cadb79870c25.png)",
+  "main": "index.js",
+  "scripts": {
+    "serve": "honkit serve . src",
+    "build": "honkit build . docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ft-seabass/node-red-beginner-handson-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1ft-seabass/node-red-beginner-handson-4/issues"
+  },
+  "homepage": "https://github.com/1ft-seabass/node-red-beginner-handson-4#readme",
+  "dependencies": {
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-copy-code-button": "0.0.2",
+    "gitbook-plugin-hide-published-with": "0.0.1",
+    "gitbook-plugin-intopic-toc": "^1.1.1",
+    "honkit": "^3.6.20"
+  }
+}
