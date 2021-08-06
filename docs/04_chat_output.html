@@ -1,0 +1,534 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>チャットにデータを送ってみよう · 大人のSTEM教育！話題のローコードプログラミングを Node-RED で体験！</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="98_extra_animal.html" />
+    
+    
+    <link rel="prev" href="03_cat_image_output.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_preparation.html">
+            
+                <a href="00_preparation.html">
+            
+                    
+                    事前準備について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_getting_started.html">
+            
+                <a href="01_getting_started.html">
+            
+                    
+                    Node-REDを動かしてみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_api_request.html">
+            
+                <a href="02_api_request.html">
+            
+                    
+                    猫画像 API からデータを取得してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_cat_image_output.html">
+            
+                <a href="03_cat_image_output.html">
+            
+                    
+                    猫画像 API のデータを表示してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="04_chat_output.html">
+            
+                <a href="04_chat_output.html">
+            
+                    
+                    チャットにデータを送ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="98_extra_animal.html">
+            
+                <a href="98_extra_animal.html">
+            
+                    
+                    エクストラ：ほかの動物画像APIをつないで画像表示してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="99_extra_api.html">
+            
+                <a href="99_extra_api.html">
+            
+                    
+                    エクストラ：public-apisで色々つないでみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >チャットにデータを送ってみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="チャットにデータを送ってみよう"><a name="チャットにデータを送ってみよう" class="plugin-anchor" href="#チャットにデータを送ってみよう"><i class="fa fa-link" aria-hidden="true"></i></a>チャットにデータを送ってみよう</h1>
+<p>この章ではチャットにデータを送ってみましょう。</p>
+<p><img src="https://i.gyazo.com/5b539505df764578d97b1aff7551eec8.png" alt="image"></p>
+<p>猫画像 API の仕組みでAPIとやり取りができるようになったので、 Discord というチャットツールで特定のチャンネルにメッセージを送るAPIがあるので使ってみます。</p>
+<h2 id="discord-とは"><a name="discord-とは" class="plugin-anchor" href="#discord-とは"><i class="fa fa-link" aria-hidden="true"></i></a>Discord とは</h2>
+<p><img src="https://i.gyazo.com/dbecfb11772f8eaa1a6ec18e76fff525.png" alt="image"></p>
+<blockquote>
+<p><a href="https://ja.wikipedia.org/wiki/Discord_(%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2" target="_blank">Discord (ソフトウェア) - Wikipedia</a>)</p>
+<p>Discord（ディスコード）は、Windows・macOS・Linux・Android・iOS・Webブラウザで動作する、ビデオ通話・音声通話・VoIPフリーソフトウェアである。アメリカ合衆国で開発されており、2019年5月時点でユーザー数が2億5000万人に達している。</p>
+</blockquote>
+<p>とのことで、当初はゲーム実況やゲーム時のコミュニケーションに使われていますが、当初よりボットやメッセージといった仕組みがプログラムからも作りやすく、最近では、開発に使う方がいたりと、なかなか扱いやすいチャットツールです。</p>
+<p>チャットツールというと、LINE ・ Slack ・ Microsoft Teams ・ チャットワークといったツールもありますね。自由にメッセージが送れると、いろいろなことができます。</p>
+<p>たとえば、</p>
+<ul>
+<li>自分用のチャットルームで必要なニュースやSNSでの情報を集めて把握しやすくする。</li>
+<li>仕事用のチャットルームで、今日1日の自分業務を朝にリマインドしていいスタートを切る。</li>
+</ul>
+<p>といったことができます。</p>
+<h2 id="discord-でメッセージを送れる-api-をしらべる"><a name="discord-でメッセージを送れる-api-をしらべる" class="plugin-anchor" href="#discord-でメッセージを送れる-api-をしらべる"><i class="fa fa-link" aria-hidden="true"></i></a>Discord でメッセージを送れる API をしらべる</h2>
+<p><img src="https://i.gyazo.com/4e8decdb4ec141573ac0aefb03cddb48.png" alt="image">)</p>
+<p><a href="https://discord.com/developers/docs/resources/webhook#execute-webhook" target="_blank">DiscordのWebhookドキュメント</a> の Webhook 実行については、このように書かれています。</p>
+<p>読み解くと、</p>
+<ul>
+<li><code>POST /webhooks/{webhook.id}/{webhook.token}</code><ul>
+<li>POST メソッドでリクエストしてほしい</li>
+<li><code>/webhooks/{webhook.id}/{webhook.token}</code> 各チャンネルで特有のURLがある（後述）</li>
+</ul>
+</li>
+<li>送るデータはJSONで content というオブジェクトの中に文字を入れればメッセージとして送れる<ul>
+<li>例えば、こんな感じ。 <code>{&quot;content&quot;:&quot;やっほー！&quot;}</code></li>
+</ul>
+</li>
+</ul>
+<p>といった API のルールが書かれています。</p>
+<h2 id="今回のメッセージを送るチャンネル"><a name="今回のメッセージを送るチャンネル" class="plugin-anchor" href="#今回のメッセージを送るチャンネル"><i class="fa fa-link" aria-hidden="true"></i></a>今回のメッセージを送るチャンネル</h2>
+<p><img src="https://i.gyazo.com/851c2a1d3b5ba2daf01810a890ed0025.png" alt="image"></p>
+<p>私が持っている Discord サーバーの一つにチャンネルを一つ作りました。</p>
+<p>あらかじめ、API の送り先を発行してあります。各ワークショップで振り分けていますので、いま入っているワークショップの方を使いましょう。</p>
+<p>田中ワークショップルームの人</p>
+<pre><code>https://discord.com/api/webhooks/853937315574710274/bnOQAsAJvGNSMoM_bx_WNW43Q3rdtamMjpvpMKxYGbVbPmSdM0Yp1oWF-kCVgrXca4Hz
+</code></pre><p>横井ワークショップルームの人</p>
+<pre><code>https://discord.com/api/webhooks/853937032157462538/pbrs0Qts0HOJ2ZcCTrYxLdOsAZYhInDuAfJerL-g1cBQ_Zi3UhFSi0OO3PxOr3K9qT9A
+</code></pre><p>こちらです↑</p>
+<p>今回はこちらのURLに、POSTリクエストで送るデータはJSONで content というオブジェクトの中に文字を入れてメッセージを送ります。</p>
+<h2 id="実践-katacoda-での-node-red-の準備"><a name="実践-katacoda-での-node-red-の準備" class="plugin-anchor" href="#実践-katacoda-での-node-red-の準備"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: Katacoda での Node-RED の準備</h2>
+<p><img src="https://i.gyazo.com/2de10931d575e9e705572040afb51d37.png" alt="image"></p>
+<p>一旦、Katacodaをリロードして再起動しましょう。</p>
+<p><a href="https://www.katacoda.com/kazuhitoyokoi/scenarios/node-red" target="_blank">https://www.katacoda.com/kazuhitoyokoi/scenarios/node-red</a></p>
+<p>もしも閉じてしまった方はこちらから。再度、起動しましょう。</p>
+<p><img src="https://i.gyazo.com/239c0aebb18423e4682942122c26206a.png" alt="image"></p>
+<p>このように教材がはじまるので START SENARIO をクリックします。</p>
+<p><img src="https://i.gyazo.com/1a31474455106f387e226d5be80e94dd.png" alt="image"></p>
+<p>起動して、しばらく待ちます。</p>
+<p><img src="https://i.gyazo.com/7567bd2523e69ba0ce1fa9827fe27039.png" alt="image"></p>
+<p>おおよそ、40 秒 ～ 1 分待っていると起動するのでお待ちください。</p>
+<h2 id="node-red-のフローを作ってみる"><a name="node-red-のフローを作ってみる" class="plugin-anchor" href="#node-red-のフローを作ってみる"><i class="fa fa-link" aria-hidden="true"></i></a>Node-RED のフローを作ってみる</h2>
+<p><img src="https://i.gyazo.com/9a0be632d5aa24d4b229db4b14f38ebf.png" alt="image"></p>
+<p>このように inject ノードで、メッセージの中身のデータを作って、http request ノードで前述した Discord の API URL に送るように設定して、debug ノードで送られた結果を受信する仕組みです。</p>
+<p>それでははじめましょう！</p>
+<p><img src="https://i.gyazo.com/3db27fed8052a008086a742ea65b5116.png" alt="image"></p>
+<p>はじめに、パレットから inject ノードをワークスペースにドラッグアンドドロップしましょう。</p>
+<p><img src="https://i.gyazo.com/292dc57f4c424a2ce8078cd47c88a8b1.png" alt="image"></p>
+<p>次に、パレットから http request ノードをワークスペースにドラッグアンドドロップしましょう。</p>
+<p><img src="https://i.gyazo.com/53f50b82d7fa95cbe2deff41223a9810.png" alt="image"></p>
+<p>最後に、パレットから debug ノードをワークスペースにドラッグアンドドロップしましょう。</p>
+<p><img src="https://i.gyazo.com/284196220e03ebd9784433b02ba384f2.png" alt="image"></p>
+<p>各ノードを inject ノード → http request ノード → debug ノード の順につなぎます。これで、フローは完成です。</p>
+<h2 id="実践-inject-ノードで、送るメッセージの中身のデータを作る"><a name="実践-inject-ノードで、送るメッセージの中身のデータを作る" class="plugin-anchor" href="#実践-inject-ノードで、送るメッセージの中身のデータを作る"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: inject ノードで、送るメッセージの中身のデータを作る</h2>
+<p><img src="https://i.gyazo.com/b0df92b33ddc8b9b65c2eaf56c5b6297.png" alt="image"></p>
+<p>inject ノードをダブルクリックして詳細を設定します。</p>
+<p><img src="https://i.gyazo.com/296c3407f36c3e89bcb54c10cb7be8d6.png" alt="image"></p>
+<p>デフォルトでは <code>msg.payload</code> が日時（タイムスタンプ）になっています。</p>
+<p><img src="https://i.gyazo.com/2f6a8b151e728bf667ec9915b4f24642.png" alt="image"></p>
+<p>送るデータのタイプを、今回の送るデータタイプ JSON と合わせて JSON に設定しましょう。</p>
+<p><img src="https://i.gyazo.com/2a9c84a886e556cea76e4e7f08f969b5.png" alt="image"></p>
+<p>このように送るデータを <code>{&quot;content&quot;:&quot;やっほー！～～～だよ！&quot;}</code> というJSONデータで設定します。<code>～～～だよ！</code> の <code>～～～</code> の部分には、皆さんのお名前に書き換えてみてください。</p>
+<p>設定出来たら、完了ボタンをクリックして設定を完了します。</p>
+<p><img src="https://i.gyazo.com/9d747d753252057d3c6260be3f906ed1.png" alt="image"></p>
+<p>送るデータは実際にはこのようなイメージです。</p>
+<p>JSON データは msg の中の payload の中にある content というオブジェクトの中に、今回送りたい文字を入れています。</p>
+<h2 id="実践-http-request-ノードで前述した-discord-の-api-url-に送るように設定"><a name="実践-http-request-ノードで前述した-discord-の-api-url-に送るように設定" class="plugin-anchor" href="#実践-http-request-ノードで前述した-discord-の-api-url-に送るように設定"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: http request ノードで前述した Discord の API URL に送るように設定</h2>
+<p><img src="https://i.gyazo.com/4a24882968e410ad4cd7bb6ebacdfa01.png" alt="image"></p>
+<p>http request ノードをダブルクリックして詳細を設定します。</p>
+<p><img src="https://i.gyazo.com/30c0851aff9d86201a5d4756c2da7678.png" alt="image"></p>
+<p>詳細設定はこのようになっています。</p>
+<p><img src="https://i.gyazo.com/55948c3fcb19c1de27252a63a647dc43.png" alt="image"></p>
+<p>メソッドの項目を POST に変更して、今回の Discord API の仕様に合わせます。</p>
+<p><img src="https://i.gyazo.com/6c3d0e4183aabfa1f05e182ecf82aa77.png" alt="image"></p>
+<p>URL の項目に今回のチャンネルへメッセージが送れる API URL を設定します。</p>
+<p>田中ワークショップルームの人</p>
+<pre><code>https://discord.com/api/webhooks/853937315574710274/bnOQAsAJvGNSMoM_bx_WNW43Q3rdtamMjpvpMKxYGbVbPmSdM0Yp1oWF-kCVgrXca4Hz
+</code></pre><p>横井ワークショップルームの人</p>
+<pre><code>https://discord.com/api/webhooks/853937032157462538/pbrs0Qts0HOJ2ZcCTrYxLdOsAZYhInDuAfJerL-g1cBQ_Zi3UhFSi0OO3PxOr3K9qT9A
+</code></pre><p>設定出来たら、完了ボタンをクリックして設定を完了します。</p>
+<p><img src="https://i.gyazo.com/2bdb7bcee8bd0219254ac90c8fe8e91f.png" alt="image"></p>
+<p>デプロイをクリックして Node-RED に設定を反映させます。</p>
+<h2 id="試してみる"><a name="試してみる" class="plugin-anchor" href="#試してみる"><i class="fa fa-link" aria-hidden="true"></i></a>試してみる</h2>
+<p><img src="https://i.gyazo.com/0d013fd82eaf3732f9a721f84bc74c49.png" alt="image"></p>
+<p>inject ノードのボタンをクリックして、データを送ってみましょう！</p>
+<p><img src="https://i.gyazo.com/99059658d1e231e42f8eed63197c81b3.png" alt="image"></p>
+<p>こちらの Discord チャンネルに、このようにデータが送られるはずです！</p>
+<p><img src="https://i.gyazo.com/37508100205348a600a7978891ab50f5.png" alt="image"></p>
+<p>debug ノードは、データがちゃんと送られるときは <code>&quot;&quot;</code> という空文字がもどってきます。</p>
+<h2 id="トラブルシューティング"><a name="トラブルシューティング" class="plugin-anchor" href="#トラブルシューティング"><i class="fa fa-link" aria-hidden="true"></i></a>トラブルシューティング</h2>
+<p><img src="https://i.gyazo.com/68b88b9c9c605da251bd2b240b1b4b70.png" alt="image"></p>
+<p>うまくデータが送られず debug ノードに上記のようにデータがきた場合は、APIのURLがコピーペーストがうまくいかず欠けてしまったときに、起きやすいエラーです。</p>
+<p><img src="https://i.gyazo.com/d67810480bd01e001e37e217b63b083e.png" alt="image"></p>
+<p>こちらは送る JSON データがうまく設定できてないときにエラーがおきます。例えば <code>{&quot;content&quot;:&quot;やっほー！～～～だよ！}</code> のデータは <code>だよ！</code> のあとのダブルクォーテーションがなくなっていることで、送るメッセージ部分が文字列にならずエラーが起きています。</p>
+<p>このあたりは、JSON データの書き方を読んでみると理解が深まります。</p>
+<ul>
+<li>参考文献<ul>
+<li><a href="http://www.tohoho-web.com/ex/json.html#string" target="_blank">JSON入門 - とほほのWWW入門</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="エクストラ1：画像を送ってみよう"><a name="エクストラ1：画像を送ってみよう" class="plugin-anchor" href="#エクストラ1：画像を送ってみよう"><i class="fa fa-link" aria-hidden="true"></i></a>エクストラ1：画像を送ってみよう</h2>
+<p>inject ノードで送る JSON データを変更してみましょう。</p>
+<pre><code class="lang-json">{<span class="hljs-string">&quot;content&quot;</span>:<span class="hljs-string">&quot;画像を送るよ! https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Vombatus_ursinus_-Maria_Island_National_Park.jpg/1280px-Vombatus_ursinus_-Maria_Island_National_Park.jpg&quot;</span>}
+</code></pre>
+<p>こちらのデータを送ってみると、</p>
+<p><img src="https://i.gyazo.com/b233491133bbdb0ceb42cca80810f923.jpg" alt="image"></p>
+<p>このように、画像URLがあっていれば Discord で画像を見ることができます。今回の画像は、<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A9%E3%83%B3%E3%83%90%E3%83%83%E3%83%88" target="_blank">ウォンバット - Wikipedia</a> から引用。</p>
+<p>好きな画像を送ってみましょう！</p>
+<h2 id="エクストラ2：絵文字を送ってみよう"><a name="エクストラ2：絵文字を送ってみよう" class="plugin-anchor" href="#エクストラ2：絵文字を送ってみよう"><i class="fa fa-link" aria-hidden="true"></i></a>エクストラ2：絵文字を送ってみよう</h2>
+<p>inject ノードで送る JSON データを変更してみましょう。</p>
+<pre><code class="lang-json">{<span class="hljs-string">&quot;content&quot;</span>:<span class="hljs-string">&quot;ホッとするー！！！！:relaxed::relaxed::relaxed::relaxed::relaxed:&quot;</span>}
+</code></pre>
+<p>こちらのデータを送ってみると、</p>
+<p><img src="https://i.gyazo.com/99b2906db03c4c152d4417b67c59781f.png" alt="image"></p>
+<p>このように <code>:relaxed:</code> という部分が絵文字となって投稿できます。</p>
+<p><a href="https://qiita.com/yamadashy/items/ae673f2bae8f1525b6af" target="_blank">Qiita/Github/Slack/Discord 絵文字一覧 - Qiita</a> </p>
+<p>こちらを参考に絵文字でメッセージを装飾してみましょう～。</p>
+<h2 id="この章のまとめ"><a name="この章のまとめ" class="plugin-anchor" href="#この章のまとめ"><i class="fa fa-link" aria-hidden="true"></i></a>この章のまとめ</h2>
+<p><img src="https://i.gyazo.com/9d560ea43e326e7f26b905d1771e60a2.png" alt="image"></p>
+<p>Discordの今回設定した API URL にデータを送ってメッセージをチャンネルに表示することができました。</p>
+<h2 id="次の章"><a name="次の章" class="plugin-anchor" href="#次の章"><i class="fa fa-link" aria-hidden="true"></i></a>次の章</h2>
+<ul>
+<li><a href="./">READMEにもどる</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_cat_image_output.html" class="navigation navigation-prev " aria-label="Previous page: 猫画像 API のデータを表示してみよう">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="98_extra_animal.html" class="navigation navigation-next " aria-label="Next page: エクストラ：ほかの動物画像APIをつないで画像表示してみよう">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"チャットにデータを送ってみよう","level":"1.6","depth":1,"next":{"title":"エクストラ：ほかの動物画像APIをつないで画像表示してみよう","level":"1.7","depth":1,"path":"98_extra_animal.md","ref":"98_extra_animal.md","articles":[]},"previous":{"title":"猫画像 API のデータを表示してみよう","level":"1.5","depth":1,"path":"03_cat_image_output.md","ref":"03_cat_image_output.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大人のSTEM教育！話題のローコードプログラミングを Node-RED で体験！","language":"ja","gitbook":"*","description":"第4回 資料"},"file":{"path":"04_chat_output.md","mtime":"2021-06-14T10:02:42.944Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-06T00:46:04.181Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

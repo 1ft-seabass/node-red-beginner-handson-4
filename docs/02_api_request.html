@@ -1,0 +1,517 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>猫画像 API からデータを取得してみよう · 大人のSTEM教育！話題のローコードプログラミングを Node-RED で体験！</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_cat_image_output.html" />
+    
+    
+    <link rel="prev" href="01_getting_started.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_preparation.html">
+            
+                <a href="00_preparation.html">
+            
+                    
+                    事前準備について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_getting_started.html">
+            
+                <a href="01_getting_started.html">
+            
+                    
+                    Node-REDを動かしてみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="02_api_request.html">
+            
+                <a href="02_api_request.html">
+            
+                    
+                    猫画像 API からデータを取得してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_cat_image_output.html">
+            
+                <a href="03_cat_image_output.html">
+            
+                    
+                    猫画像 API のデータを表示してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_chat_output.html">
+            
+                <a href="04_chat_output.html">
+            
+                    
+                    チャットにデータを送ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="98_extra_animal.html">
+            
+                <a href="98_extra_animal.html">
+            
+                    
+                    エクストラ：ほかの動物画像APIをつないで画像表示してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="99_extra_api.html">
+            
+                <a href="99_extra_api.html">
+            
+                    
+                    エクストラ：public-apisで色々つないでみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >猫画像 API からデータを取得してみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="猫画像-api-からデータを取得してみよう"><a name="猫画像-api-からデータを取得してみよう" class="plugin-anchor" href="#猫画像-api-からデータを取得してみよう"><i class="fa fa-link" aria-hidden="true"></i></a>猫画像 API からデータを取得してみよう</h1>
+<p>この章では 猫画像 API からデータを取得してみようということで進めていきます。</p>
+<p><img src="https://i.gyazo.com/364cbe715eccee492a9480e772535318.png" alt="image"></p>
+<p>Node-RED パレットを見てみると、ネットワークというカテゴリに実に様々なノードが並んでます。</p>
+<p>今回はその中でも、たくさんの API につなぐことができる HTTP プロトコルに対応した http request ノードを使ってみましょう。</p>
+<p><img src="https://i.gyazo.com/36ef8dd43559913b54a2a5712c3ee376.png" alt="image"></p>
+<h2 id="api-の世界をのぞいてみる"><a name="api-の世界をのぞいてみる" class="plugin-anchor" href="#api-の世界をのぞいてみる"><i class="fa fa-link" aria-hidden="true"></i></a>API の世界をのぞいてみる</h2>
+<p>API とは、 Application Programming Interface の頭文字です。データを提供したり、何かしらの機能を提供するソフトウェアの一部を、私たちのような外部の人間が扱えるように公開されている窓口です。</p>
+<p>たとえば、WEBアプリケーションなどインターネットの様々な仕組みを構築するとき、 API からデータを取得して加工して表示することが多いです。データや機能を借り受けるということですね。</p>
+<p><img src="https://i.gyazo.com/fdad42d082b6fc15b0be1030af528dd6.png" alt="image"></p>
+<p>API は、データだけでなく、さらに踏み込んでAI・IoT・チャットなど様々な技術を手軽に利用することもできます。</p>
+<p><img src="https://i.gyazo.com/382d040478d18d9e3d7f15188c2cb3f3.png" alt="image"></p>
+<p>API につなげるためには HTTP という通信のルール（プロトコル）を理解するのことが大切です。</p>
+<ul>
+<li>データを取りに行くとき（問い合わせ）<ul>
+<li>HTTPリクエスト</li>
+<li>HTTPステータス</li>
+</ul>
+</li>
+<li>データを受け取るとき（データ応答）<ul>
+<li>HTTPヘッダー</li>
+</ul>
+</li>
+</ul>
+<p>さらにデータをJSONデータという形で受け取ります。受け取ったAPIに合わせて、JSONデータの中身を理解して、必要なデータを取り出しします。</p>
+<h2 id="フリーのapiのリストコレクション-public-apis"><a name="フリーのapiのリストコレクション-public-apis" class="plugin-anchor" href="#フリーのapiのリストコレクション-public-apis"><i class="fa fa-link" aria-hidden="true"></i></a>フリーのAPIのリストコレクション public-apis</h2>
+<p>今回はフリーのAPIのリストコレクション <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis</a> をご紹介します。</p>
+<p><img src="https://i.gyazo.com/ae74f03f1dc5a89503579497a476530a.png" alt="image"></p>
+<p>英語ですが、実に 100 以上の API があり見ているだけで楽しいです。</p>
+<p>とはいえ、本来であれば、各 API の仕様に合わせて HTTP リクエストを正しくアクセスするかを読み解く必要があります。</p>
+<ul>
+<li>HTTP リクエスト方法</li>
+<li>HTTP ヘッダーや必要なパラメータ</li>
+<li>受け取った HTTP レスポンスがどのようなデータ構造になっているか</li>
+<li>などなど</li>
+</ul>
+<p><img src="https://i.gyazo.com/09bc50e2b861135f3ab3c829b906f79d.png" alt="image"></p>
+<p>今回は、私が別の機会に書いた <a href="https://protoout.studio/posts/public-apis-api-get" target="_blank">すぐにAPIを体験！public-apis 100以上のJavaScript axiosサンプル集</a> を使っていきます。</p>
+<h2 id="実践-node-red-で-http-request-する仕組みを作ってみる"><a name="実践-node-red-で-http-request-する仕組みを作ってみる" class="plugin-anchor" href="#実践-node-red-で-http-request-する仕組みを作ってみる"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: Node-RED で http request する仕組みを作ってみる</h2>
+<p><img src="https://i.gyazo.com/baedc63f4a27f63eb33277aeb49481eb.png" alt="image"></p>
+<p>まず、パレットから http request ノードをワークスペースにドラッグアンドドロップしましょう。</p>
+<p><img src="https://i.gyazo.com/c408d12ed4e8cac8f21f908895ec1ba6.png" alt="image"></p>
+<p>http request ノードをワークスペースに配置しました。</p>
+<p><img src="https://i.gyazo.com/247a57dbff5c98d92558dc25d8c8a7bb.png" alt="image"></p>
+<p>inject ノードをワークスペースに配置して、動かすきっかけを指示できるようにします。</p>
+<p><img src="https://i.gyazo.com/c7fa03567191282fe7dda707b2755b90.png" alt="image"></p>
+<p>debug ノードをワークスペースに配置して http request ノードが、どこかのURLにアクセスして取得したデータをデバッグタブに表示できるようにします。</p>
+<p><img src="https://i.gyazo.com/79d9e7553396c09fb9d2daf96a726d20.png" alt="image"></p>
+<p>inject ノード → http request ノード → debug ノード とつなぎます。</p>
+<p>これで「何かの API につなぐ」仕組みはひとまず出来上がりました。</p>
+<h2 id="今回は猫画像をつなげてみます"><a name="今回は猫画像をつなげてみます" class="plugin-anchor" href="#今回は猫画像をつなげてみます"><i class="fa fa-link" aria-hidden="true"></i></a>今回は猫画像をつなげてみます</h2>
+<p>さきほどの フリーのAPIのリストコレクション <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis</a> の中から、かわいい猫画像をランダムに返答してくれる Random Cat というAPIを使ってみましょう。</p>
+<p><img src="https://i.gyazo.com/dca6cd0f1ae97e469bbbfb81e19085fc.png" alt="image"></p>
+<p><a href="https://aws.random.cat/" target="_blank">https://aws.random.cat/</a> こちらです。</p>
+<p>HTTP リクエストの仕様として読み解くと以下のようになります。</p>
+<ul>
+<li>HTTP リクエスト方法<ul>
+<li>GET メソッド</li>
+</ul>
+</li>
+<li>アクセスする API の URL<ul>
+<li><a href="https://aws.random.cat/meow" target="_blank">https://aws.random.cat/meow</a></li>
+</ul>
+</li>
+</ul>
+<p>これのみです。追加で設定すべきパラメータもなく、これは、GET リクエストのためブラウザからアクセスでき、とても扱いやすいAPIです。</p>
+<h2 id="実践-node-red-の-http-request-ノードに設定してみる"><a name="実践-node-red-の-http-request-ノードに設定してみる" class="plugin-anchor" href="#実践-node-red-の-http-request-ノードに設定してみる"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: Node-RED の http request ノードに設定してみる</h2>
+<p><img src="https://i.gyazo.com/5eedcc78773990656fca5301fbc7acf4.png" alt="image"></p>
+<p>さきほどのワークスペースに戻って http request ノードをダブルクリックして詳細の設定をしましょう。</p>
+<p><img src="https://i.gyazo.com/01180438ef52a518cf184d32394cbd86.png" alt="image"></p>
+<p>このような設定項目があります。HTTP リクエストをするために様々な設定があります。</p>
+<p><img src="https://i.gyazo.com/ace03d6fefff738b0df25119c855e122.png" alt="image"></p>
+<p>今回は</p>
+<table>
+<thead>
+<tr>
+<th>項目名</th>
+<th>変更する内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>メソッド</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><a href="https://aws.random.cat/meow" target="_blank">https://aws.random.cat/meow</a></td>
+</tr>
+</tbody>
+</table>
+<p>で設定します。</p>
+<p>完了をクリックします。</p>
+<p><img src="https://i.gyazo.com/2bdb7bcee8bd0219254ac90c8fe8e91f.png" alt="image"></p>
+<p>デプロイをクリックして Node-RED に設定を反映させます。</p>
+<h2 id="実践-動かしてみる"><a name="実践-動かしてみる" class="plugin-anchor" href="#実践-動かしてみる"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: 動かしてみる</h2>
+<p><img src="https://i.gyazo.com/d02727178bb7fb092a36642e2eb0d9ee.png" alt="image"></p>
+<p>それでは inject ノードの <img src="https://i.gyazo.com/917722feaa1444c55f1a19ece002757d.png" alt="image"> のボタンをクリックしましょう。</p>
+<p><img src="https://i.gyazo.com/43f320285579e73bfd807acb52699805.png" alt="image"></p>
+<p>サイドバーのデバッグタブには、猫画像APIからリクエストが表示されます。</p>
+<h2 id="実践-返答データを文字列からjsonに変更する"><a name="実践-返答データを文字列からjsonに変更する" class="plugin-anchor" href="#実践-返答データを文字列からjsonに変更する"><i class="fa fa-link" aria-hidden="true"></i></a>[実践]: 返答データを文字列からJSONに変更する</h2>
+<p><img src="https://i.gyazo.com/e0354e1cefe80b1ebf9bc905cc081d2c.png" alt="image"></p>
+<p>現状では取得したデータは文字列です。今後扱いやすいようにJSONに変更しましょう。</p>
+<p>文字列のままだと頑張って読んで探して取り出す必要がありますが、JSONデータで受け取れると入れ子構造で目的のデータが取り出しやすくなります。</p>
+<p>それでは、http request ノードをダブルクリックをしてプロパティ編集画面を表示します。</p>
+<p><img src="https://i.gyazo.com/7ad33f4cec6e1be03622557bd9af245e.png" alt="image"></p>
+<p>http request ノードの設定の <code>出力形式</code> をUTF文字列から <code>JSONオブジェクト</code> 変更します。</p>
+<p><img src="https://i.gyazo.com/d51b5faaace99acf648a267bb27b91c9.png" alt="image"></p>
+<p>すると、文字列ができるかぎり JSON に変換されます。</p>
+<p><a href="https://gyazo.com/419a64aecb7753fa7cfe646155910dab" target="_blank"><img src="https://i.gyazo.com/419a64aecb7753fa7cfe646155910dab.gif" alt="Image from Gyazo"></a></p>
+<p>このように、今回はシンプルな構造ですが、JSONの中身をツリー構造でのぞくことでデータの内容が把握しやすくなります。</p>
+<p><img src="https://i.gyazo.com/d51b5faaace99acf648a267bb27b91c9.png" alt="image"></p>
+<p>ためしに、fileにある猫画像URLをコピーして</p>
+<p><img src="https://i.gyazo.com/3b27b584458761dd13dd38b7db6ada17.png" alt="image"></p>
+<p>ブラウザのアドレスバーにペーストしてアクセスしてみましょう。</p>
+<p><img src="https://i.gyazo.com/511188999f8b0f418dfbe413ece02d2c.jpg" alt="image"></p>
+<p>無事、猫画像が見れていますね！次の章で Node-RED の中で表示してみましょう！</p>
+<h2 id="この章のまとめ"><a name="この章のまとめ" class="plugin-anchor" href="#この章のまとめ"><i class="fa fa-link" aria-hidden="true"></i></a>この章のまとめ</h2>
+<p><img src="https://i.gyazo.com/9d560ea43e326e7f26b905d1771e60a2.png" alt="image"></p>
+<p>猫画像 API を元に http request ノードを使って外部からデータを取得する流れをお伝えしました。</p>
+<h2 id="次の章"><a name="次の章" class="plugin-anchor" href="#次の章"><i class="fa fa-link" aria-hidden="true"></i></a>次の章</h2>
+<p><a href="03_cat_image_output.html">猫画像 API のデータを表示してみよう</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_getting_started.html" class="navigation navigation-prev " aria-label="Previous page: Node-REDを動かしてみよう">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_cat_image_output.html" class="navigation navigation-next " aria-label="Next page: 猫画像 API のデータを表示してみよう">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"猫画像 API からデータを取得してみよう","level":"1.4","depth":1,"next":{"title":"猫画像 API のデータを表示してみよう","level":"1.5","depth":1,"path":"03_cat_image_output.md","ref":"03_cat_image_output.md","articles":[]},"previous":{"title":"Node-REDを動かしてみよう","level":"1.3","depth":1,"path":"01_getting_started.md","ref":"01_getting_started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大人のSTEM教育！話題のローコードプログラミングを Node-RED で体験！","language":"ja","gitbook":"*","description":"第4回 資料"},"file":{"path":"02_api_request.md","mtime":"2021-03-01T06:30:43.897Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-06T00:46:04.181Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
