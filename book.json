@@ -1,0 +1,12 @@
+{
+  "title": "大人のSTEM教育！話題のローコードプログラミングを Node-RED で体験！",
+  "description": "第4回 資料",
+  "language": "ja",
+  "plugins": [
+    "anchors",
+    "hide-published-with",
+    "copy-code-button",
+    "intopic-toc",
+    "back-to-top-button"
+  ]
+}
